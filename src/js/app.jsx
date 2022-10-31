@@ -2,6 +2,8 @@
 import React from 'react';
 
 
+
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -45,12 +47,12 @@ export default class App extends React.Component {
 
     return (
       <div className="container">
+          <img src="/images/home.png" alt=""/>
+          <h1 >Mortgage Calculator</h1>
 
-        <h3>Mortgage Calculator</h3>
+        <button type="button" className="btn btn-primary center" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch Calculator</button>
 
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch Calculator</button>
-
-
+  
         <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
@@ -63,7 +65,7 @@ export default class App extends React.Component {
                   id="balance"
                   name="balance"
                   type="number"
-                  placeholder="balance"
+                  placeholder="Loan Amount"
                   onChange={this.handleChange}
                 />
                 <input
