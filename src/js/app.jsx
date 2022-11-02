@@ -12,7 +12,7 @@ export default class App extends React.Component {
       rate: 0,
       term: 0,
       output: '',
-      showMP: false,
+      showMP: true,
 
     };
 
@@ -37,14 +37,14 @@ export default class App extends React.Component {
     const principle = this.state.balance;
     const m = ((principle * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1)).toFixed(2);
 
-    this.setState({ output: m , showMP :! this.state.showMP });
+    this.setState({ output: m, showMP: false });
     //console.log(n,r,m)
   }
 
-   
+
 
   render() {
- 
+
     return (
       <div className="container">
 
@@ -55,38 +55,38 @@ export default class App extends React.Component {
 
         <div className="card" >
 
-            {/* <h1 className="card-title">Mortgage Calculator</h1> */}
+          {/* <h1 className="card-title">Mortgage Calculator</h1> */}
           <div className="card-body" id="cardStyle">
 
-<div className="row">
-<div className="col-6">
-<div className="input-group mb-31" >
-              <span className="input-group-text" id="inputGroup-sizing-default">Loan Amount</span>
-              <input
-                className="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-default"
-                id="balance"
-                name="balance"
-                type="number"
-                placeholder="Enter Amount"
-                onChange={this.handleChange}
-              />
-              </div>
+            <div className="row">
+              <div className="col-6">
+                <div className="input-group mb-31" >
+                  <span className="input-group-text" id="inputGroup-sizing-default">Loan Amount</span>
+                  <input
+                    className="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="balance"
+                    name="balance"
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={this.handleChange}
+                  />
+                </div>
 
-              <div className="input-group mb-32" >
-                <span className="input-group-text" id="inputGroup-sizing-default">Interest Rate</span>
-                <input
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default"
-                  id="rate"
-                  name="rate"
-                  type="number"
-                  step="0.01"
-                  placeholder=" Enter %"
-                  onChange={this.handleChange}
-                />
+                <div className="input-group mb-32" >
+                  <span className="input-group-text" id="inputGroup-sizing-default">Interest Rate</span>
+                  <input
+                    className="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    id="rate"
+                    name="rate"
+                    type="number"
+                    step="0.01"
+                    placeholder=" Enter %"
+                    onChange={this.handleChange}
+                  />
                 </div>
 
                 <div className="input-group mb-33" >
@@ -103,21 +103,29 @@ export default class App extends React.Component {
                     <option value={15}>15</option>
                     <option value={30}>30</option>
                   </select>
-                  </div>
+                </div>
 
-</div>
-<div className="col-6">
+              </div>
+              <div className="col-6">
 
-  <div>
-   
-    {this.state.showMP ? this.state.output : <img src="/images/BFlogo.png" />}
-   
-                   
-  </div>
+                <div>
 
-  {/* <button onClick={this.handleClick}>Submit</button> */}
-                  <button  onClick={this.handleClick}>Submit</button>
-                  {/* <div
+                  {this.state.showMP ? <img src="/images/BFlogo.png" /> : <div
+                    id="output"
+                  >
+                    {''}
+                    {new Intl.NumberFormat('dollars', {
+                      style: 'currency',
+                      currency: 'USD'
+                    }).format(this.state.output)}
+                  </div>}
+
+
+                </div>
+
+
+                <button onClick={this.handleClick}>Submit</button>
+                {/* <div
                     id="output"
                   >
                    {''}
@@ -127,16 +135,16 @@ export default class App extends React.Component {
                   }).format(this.state.output)}     
                   </div> */}
 
-</div>
-</div>
-
-
-               
-
-                </div>
               </div>
-        
-        
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+
         {/* <button type="button" classNameName="btn btn-primary center" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch Calculator</button>
 
   
