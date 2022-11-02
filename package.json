@@ -4,24 +4,19 @@
   "description": "Base application setup for creating a new react project.",
   "main": "server/index.js",
   "scripts": {
-
     "build": "npm run less && webpack --mode development",
-    
     "start": "npm run build && node server/index.js",
-    
     "less": "lessc src/css/style.less dist/css/style.css",
-    
     "lint": "eslint .",
-    
     "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
-    
-    },
+  },
   "dependencies": {
     "axios": "^0.16.1",
     "babel": "^6.3.26",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.7.0",
     "bluebird": "^3.5.0",
+    "bootstrap-icons": "^1.9.1",
     "chai": "^3.5.0",
     "expect": "^1.20.2",
     "express": "^4.15.3",

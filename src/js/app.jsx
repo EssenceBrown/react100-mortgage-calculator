@@ -48,14 +48,17 @@ export default class App extends React.Component {
     return (
       <div className="container">
 
-        {/* <img src="/images/home.png" alt="" /> */}
+ 
+<img src="/images/house-heart.svg" className="home"/>
 
         <h1 className="card-title">Mortgage Calculator</h1>
+ 
         <h2>Simply enter the loan amount, interest rate and term in the fields below and click submit. </h2>
+
 
         <div className="card" >
 
-          {/* <h1 className="card-title">Mortgage Calculator</h1> */}
+          
           <div className="card-body" id="cardStyle">
 
             <div className="row">
