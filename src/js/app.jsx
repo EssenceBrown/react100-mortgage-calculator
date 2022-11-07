@@ -31,14 +31,12 @@ export default class App extends React.Component {
 
 
   handleClick() {
-    //console.log("click")
     const n = this.state.term * 12;
     const r = this.state.rate / 1200;
     const principle = this.state.balance;
     const m = ((principle * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1)).toFixed(2);
 
     this.setState({ output: m, showMP: false });
-    //console.log(n,r,m)
   }
 
 
@@ -48,17 +46,17 @@ export default class App extends React.Component {
     return (
       <div className="container">
 
- 
-<img src="/images/house-heart.svg" className="home"/>
+
+        <img src="/images/house-heart.svg" className="home" />
 
         <h1 className="card-title">Mortgage Calculator</h1>
- 
+
         <h2>Simply enter the loan amount, interest rate and term in the fields below and click submit. </h2>
 
 
         <div className="card" >
 
-          
+
           <div className="card-body" id="cardStyle">
 
             <div className="row">
